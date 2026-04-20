@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+    <h2>안녕하세요, 제 이름은 카밀라입니다.</h2>
+    <p>
+        저는 25학번 명지대학교 경영학과에서 공부하고 있습니다.
+    </p>
+    <p>
+        제 블로그에 방문해주셔서 감사합니다 :)
+    </p>
+</section>
+
+<section class="post-section">
+    <h3>최근 글</h3>
+
+    <div class="post-list">
+        {% for post in posts %}
+        <div class="card">
+            <h4>{{ post.title }}</h4>
+            <p>{{ post.content[:80] }}...</p>
+            <a href="/post/{{ post.id }}">자세히 보기</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
